@@ -78,3 +78,42 @@ const z = 3;
 console.log(x === window.x);
 console.log(y === window.y);
 console.log(z === window.z);
+
+console.log(this);
+
+const calcAges = function (birthYear) {
+  console.log(2030 - birthYear);
+  console.log(this);
+};
+calcAges(1994);
+
+const calcAgeArrow = birthYear => {
+  console.log(2030 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(1994);
+
+const jonas = {
+  year: 1995,
+  calcAge: function () {
+    console.log(this);
+    console.log(2035 - this.year);
+  },
+};
+jonas.calcAge();
+
+const kaela = {
+  year: 2001,
+};
+// Copy the function from another object
+kaela.calcAge = jonas.calcAge;
+kaela.calcAge();
+
+const mauri = {
+  year: 2023,
+};
+mauri.calcAge = jonas.calcAge;
+mauri.calcAge();
+
+const f = jonas.calcAge;
+// f();
