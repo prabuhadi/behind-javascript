@@ -1,5 +1,6 @@
 'use strict';
 
+// Scoping Practice
 const firstName = 'Prabu';
 
 function calcAge(birthYear) {
@@ -35,3 +36,45 @@ function calcAge(birthYear) {
 console.log(calcAge(1996));
 // console.log(printAge);
 // printAge();
+
+//Hoisting and TDZ practice
+// console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'Jonas';
+let job = 'Developer';
+const year = 1991;
+
+// Function
+console.log(typeof addDecl, addDecl(2, 3));
+// console.log(addExpr(2, 3));
+// console.log(addArrow(2, 3));
+
+function addDecl(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  constAddArrow = (a, b) => a + b;
+};
+
+const addArrow = (a, b) => a + b;
+
+// Example
+console.log(typeof numProducts);
+if (!numProducts) deleteShoppingCart();
+
+var numProducts = 1;
+
+function deleteShoppingCart() {
+  console.log('All Product Deleted');
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(z === window.z);
