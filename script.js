@@ -1,7 +1,7 @@
 'use strict';
 
 // Scoping Practice
-const firstName = 'Prabu';
+// const firstName = 'Prabu';
 
 function calcAge(birthYear) {
   const age = 2061 - birthYear;
@@ -55,11 +55,11 @@ function addDecl(a, b) {
   return a + b;
 }
 
-const addExpr = function (a, b) {
-  constAddArrow = (a, b) => a + b;
-};
+// const addExpr = function (a, b) {
+//   constAddArrow = (a, b) => a + b;
+// };
 
-const addArrow = (a, b) => a + b;
+// const addArrow = (a, b) => a + b;
 
 // Example
 console.log(typeof numProducts);
@@ -93,6 +93,7 @@ const calcAgeArrow = birthYear => {
 };
 calcAgeArrow(1994);
 
+// this keyword
 const jonas = {
   year: 1995,
   calcAge: function () {
@@ -117,3 +118,50 @@ mauri.calcAge();
 
 const f = jonas.calcAge;
 // f();
+
+var firstName = 'Zeta';
+
+const prabu = {
+  firstName: 'prabu',
+  year: 1999,
+  calcAged: function () {
+    // console.log(this);
+    console.log(2030 - this.year);
+
+    // Solution 1
+    // const self = this; // self or this
+    // const isGenerationX = function () {
+    //   console.log(self.year);
+    //   console.log(self.yaer !== 1999);
+    // };
+
+    // Solution 2
+    const isGenerationX = () => {
+      console.log(this.year);
+      console.log(this.yaer !== 1999);
+    };
+    isGenerationX();
+  },
+
+  greet: () => {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  },
+};
+// console.log(prabu);
+prabu.greet();
+prabu.calcAged();
+
+// argument keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+
+// arguments not work on arrow function
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 4, 4);
